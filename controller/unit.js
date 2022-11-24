@@ -1,8 +1,11 @@
 const model = require("../config/model/index");
 const controller = {};
+const commonHelper = require("../helper/common");
 
 controller.listUnit = async function (req, res) {
   try {
+    const { role } = req.payload;
+    if (role === "user") return commonHelper.response(res, null, 403, "Unauthorized to access data!");
     let unit = await model.unit.findAll();
     if (unit.length > 0) {
       res.json({
@@ -27,6 +30,8 @@ controller.listUnit = async function (req, res) {
 
 controller.detailUnit = async function (req, res) {
   try {
+    const { role } = req.payload;
+    if (role === "user") return commonHelper.response(res, null, 403, "Unauthorized to access data!");
     let unit = await model.unit.findAll({
       where: {
         unitId: req.params.unitId,
@@ -55,6 +60,8 @@ controller.detailUnit = async function (req, res) {
 
 controller.createUnit = async function (req, res) {
   try {
+    const { role } = req.payload;
+    if (role === "user") return commonHelper.response(res, null, 403, "Unauthorized to access data!");
     let unit = await model.unit.create({
       unitId: req.body.unitId,
       nameUnit: req.body.nameUnit,
@@ -74,6 +81,8 @@ controller.createUnit = async function (req, res) {
 
 controller.updateUnit = async function (req, res) {
   try {
+    const { role } = req.payload;
+    if (role === "user") return commonHelper.response(res, null, 403, "Unauthorized to access data!");
     let unit = await model.unit.update(
       {
         unitId: req.body.unitId,
@@ -99,6 +108,8 @@ controller.updateUnit = async function (req, res) {
 
 controller.deleteUnit = async function (req, res) {
   try {
+    const { role } = req.payload;
+    if (role === "user") return commonHelper.response(res, null, 403, "Unauthorized to access data!");
     let unit = await model.unit.destroy({
       where: {
         unitId: req.params.unitId,

@@ -1,22 +1,25 @@
 const model = require("../config/model/index");
 const controller = {};
+const commonHelper = require("../helper/common");
 
 controller.listMedicene = async function (req, res) {
   try {
+    const { role } = req.payload;
+    if (role === "user") return commonHelper.response(res, null, 403, "Unauthorized to access data!");
     let medicene = await model.medicene.findAll({
-      attributes: ['idMedicene','namaObat','stock','tglKadaluarsa','hargaBeli','hargaJual'],
+      attributes: ["idMedicene", "namaObat", "stock", "tglKadaluarsa", "hargaBeli", "hargaJual"],
       include: [
         {
-          model: model.category
+          model: model.category,
         },
         {
-          model: model.storage
+          model: model.storage,
         },
         {
-          model: model.supplier
+          model: model.supplier,
         },
         {
-          model: model.unit
+          model: model.unit,
         },
       ],
     });
@@ -43,6 +46,8 @@ controller.listMedicene = async function (req, res) {
 
 controller.detailMedicene = async function (req, res) {
   try {
+    const { role } = req.payload;
+    if (role === "user") return commonHelper.response(res, null, 403, "Unauthorized to access data!");
     let medicene = await model.medicene.findAll({
       where: {
         idMedicene: req.params.idMedicene,
@@ -71,6 +76,8 @@ controller.detailMedicene = async function (req, res) {
 
 controller.createMedicene = async function (req, res) {
   try {
+    const { role } = req.payload;
+    if (role === "user") return commonHelper.response(res, null, 403, "Unauthorized to access data!");
     let medicene = await model.medicene.create({
       idMedicene: req.body.idMedicene,
       namaObat: req.body.namaObat,
@@ -99,6 +106,8 @@ controller.createMedicene = async function (req, res) {
 
 controller.updateMedicene = async function (req, res) {
   try {
+    const { role } = req.payload;
+    if (role === "user") return commonHelper.response(res, null, 403, "Unauthorized to access data!");
     let medicene = await model.medicene.update(
       {
         idMedicene: req.body.idMedicene,
@@ -133,6 +142,8 @@ controller.updateMedicene = async function (req, res) {
 
 controller.deleteMedicene = async function (req, res) {
   try {
+    const { role } = req.payload;
+    if (role === "user") return commonHelper.response(res, null, 403, "Unauthorized to access data!");
     let medicene = await model.medicene.destroy({
       where: {
         idMedicene: req.params.idMedicene,

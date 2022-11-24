@@ -1,8 +1,11 @@
 const model = require("../config/model/index");
 const controller = {};
+const commonHelper = require("../helper/common");
 
 controller.listSupplier = async function (req, res) {
   try {
+    const { role } = req.payload;
+    if (role === "user") return commonHelper.response(res, null, 403, "Unauthorized to access data!");
     let supplier = await model.supplier.findAll();
     if (supplier.length > 0) {
       res.json({
@@ -27,6 +30,8 @@ controller.listSupplier = async function (req, res) {
 
 controller.detailSupplier = async function (req, res) {
   try {
+    const { role } = req.payload;
+    if (role === "user") return commonHelper.response(res, null, 403, "Unauthorized to access data!");
     let supplier = await model.supplier.findAll({
       where: {
         supplierId: req.params.supplierId,
@@ -55,6 +60,8 @@ controller.detailSupplier = async function (req, res) {
 
 controller.createSupplier = async function (req, res) {
   try {
+    const { role } = req.payload;
+    if (role === "user") return commonHelper.response(res, null, 403, "Unauthorized to access data!");
     let supplier = await model.supplier.create({
       supplierId: req.body.supplierId,
       nameSupplier: req.body.nameSupplier,
@@ -74,6 +81,8 @@ controller.createSupplier = async function (req, res) {
 
 controller.updateSupplier = async function (req, res) {
   try {
+    const { role } = req.payload;
+    if (role === "user") return commonHelper.response(res, null, 403, "Unauthorized to access data!");
     let supplier = await model.supplier.update(
       {
         supplierId: req.body.supplierId,
@@ -99,6 +108,8 @@ controller.updateSupplier = async function (req, res) {
 
 controller.deleteSupplier = async function (req, res) {
   try {
+    const { role } = req.payload;
+    if (role === "user") return commonHelper.response(res, null, 403, "Unauthorized to access data!");
     let supplier = await model.supplier.destroy({
       where: {
         supplierId: req.params.supplierId,

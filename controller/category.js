@@ -1,8 +1,11 @@
 const model = require("../config/model/index");
 const controller = {};
+const commonHelper = require("../helper/common");
 
 controller.listCategory = async function (req, res) {
   try {
+    const { role } = req.payload;
+    if (role === "user") return commonHelper.response(res, null, 403, "Unauthorized to access data!");
     let category = await model.category.findAll();
     if (category.length > 0) {
       res.json({
@@ -27,6 +30,8 @@ controller.listCategory = async function (req, res) {
 
 controller.detailCategory = async function (req, res) {
   try {
+    const { role } = req.payload;
+    if (role === "user") return commonHelper.response(res, null, 403, "Unauthorized to access data!");
     let category = await model.category.findAll({
       where: {
         categoryId: req.params.categoryId,
@@ -55,6 +60,8 @@ controller.detailCategory = async function (req, res) {
 
 controller.createCategory = async function (req, res) {
   try {
+    const { role } = req.payload;
+    if (role === "user") return commonHelper.response(res, null, 403, "Unauthorized to access data!");
     let category = await model.category.create({
       categoryId: req.body.categoryId,
       nameCategory: req.body.nameCategory,
@@ -74,6 +81,8 @@ controller.createCategory = async function (req, res) {
 
 controller.updateCategory = async function (req, res) {
   try {
+    const { role } = req.payload;
+    if (role === "user") return commonHelper.response(res, null, 403, "Unauthorized to access data!");
     let category = await model.category.update(
       {
         categoryId: req.body.categoryId,
@@ -99,6 +108,8 @@ controller.updateCategory = async function (req, res) {
 
 controller.deleteCategory = async function (req, res) {
   try {
+    const { role } = req.payload;
+    if (role === "user") return commonHelper.response(res, null, 403, "Unauthorized to access data!");
     let category = await model.category.destroy({
       where: {
         categoryId: req.params.categoryId,

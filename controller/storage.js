@@ -1,8 +1,11 @@
 const model = require("../config/model/index");
 const controller = {};
+const commonHelper = require("../helper/common");
 
 controller.listStorage = async function (req, res) {
   try {
+    const { role } = req.payload;
+    if (role === "user") return commonHelper.response(res, null, 403, "Unauthorized to access data!");
     let storage = await model.storage.findAll();
     if (storage.length > 0) {
       res.json({
@@ -27,6 +30,8 @@ controller.listStorage = async function (req, res) {
 
 controller.detailStorage = async function (req, res) {
   try {
+    const { role } = req.payload;
+    if (role === "user") return commonHelper.response(res, null, 403, "Unauthorized to access data!");
     let storage = await model.storage.findAll({
       where: {
         storageId: req.params.storageId,
@@ -55,6 +60,8 @@ controller.detailStorage = async function (req, res) {
 
 controller.createStorage = async function (req, res) {
   try {
+    const { role } = req.payload;
+    if (role === "user") return commonHelper.response(res, null, 403, "Unauthorized to access data!");
     let storage = await model.storage.create({
       storageId: req.body.storageId,
       nameStorage: req.body.nameStorage,
@@ -74,6 +81,8 @@ controller.createStorage = async function (req, res) {
 
 controller.updateStorage = async function (req, res) {
   try {
+    const { role } = req.payload;
+    if (role === "user") return commonHelper.response(res, null, 403, "Unauthorized to access data!");
     let storage = await model.storage.update(
       {
         storageId: req.body.storageId,
@@ -99,6 +108,8 @@ controller.updateStorage = async function (req, res) {
 
 controller.deleteStorage = async function (req, res) {
   try {
+    const { role } = req.payload;
+    if (role === "user") return commonHelper.response(res, null, 403, "Unauthorized to access data!");
     let storage = await model.storage.destroy({
       where: {
         storageId: req.params.storageId,
