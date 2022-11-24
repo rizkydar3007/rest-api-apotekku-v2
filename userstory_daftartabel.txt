@@ -1,0 +1,96 @@
+USER STORY
+
+1. Kasir (user)
+- Sebagai kasir, saya ingin pembukuan penjualan obat yang tadinya dilakukan secara manual dapat dilakukan dengan lebih cepat, sehingga memudahkan pekerjaan saya.
+- Sebagai kasir, saya ingin dapat melihat stok obat tanpa harus mengecek obat di gudang atau bertanya ke petugas yang lain, sehingga mempercepat pengecekan stok obat jika ada konsumen yang bertanya.
+- Sebagai kasir, saya ingin mengetahui obat yang akan kadaluarsa tanpa mengecek di gudang atau bertanya ke petugas yang lain, sehingga diharapkan tidak ada obat kadaluarsa yang dijual ke konsumen.
+- Sebagai kasir, saya ingin mengetahui detail obat apabila saya terlupa, sehingga konsumen tidak menunggu lama karena saya perlu mengambil obat tersebut jika saya lupa.
+
+2. Bagian pengadaan obat?? (admin)
+- Sebagai bagian pengadaan, saya ingin pembuatan laporan penjualan dan pembelian obat menjadi lebih cepat, sehingga memudahkan pekerjaan saya.
+
+3. Pemilik Apotek (superuser)
+- Sebagai pemilik apotek, saya ingin memiliki aplikasi yang dapat memberikan wewenang kepada kasir dan admin yang sesuai dengan jobdesc masing-masing, sehingga saya lebih mudah dalam memberikan tugas.
+- Sebagai pemilik apotek, saya ingin meminimalisir kesalahan akibat kelalaian dalam pengerjaan yang masih dilakukan secara manual, sehingga hasil pelaporan yang didapat lebih terpercaya dan memudahkan dalam pengambilan keputusan perusahaan
+
+------------------------------
+Pembagian Role : 
+
+1. Role Superuser
+Kendali sistem dari seluruh role user termasuk register admin
+Dapat melihat, mengubah , menambah, dan menghapus data obat yang ada
+
+2. Role Admin
+Maintenance sistem untuk mengelola data yang di input oleh user (kasir)
+Dapa melihat, mengubah dan menambah data obat yang ada
+
+3. Role User (Kasir)
+User (kasir) yang menginput data penjualan dan pembelian
+Hanya melihat data obat yang ada
+
+------------------------------
+List Database (ada 9 Tabel)
+
+1. User
+ID user 
+Nama user
+Email user
+NIP (Nomor Induk Pegawai)
+Password
+Role (user / admin / superuser)
+
+
+2. Obat
+ID obat
+Nama obat
+ID Kategori -> relasi dengan tabel Kategori bagian ID obat => menampilkan kategori
+Stok
+ID Satuan obat -> relasi dengan tabel Satuan Obat bagian ID obat => menampilkan satuan stok
+Tanggal Kadaluarsa
+ID Tempat penyimpanan -> relasi dengan tabel Penyimpanan bagian ID => menampilkan tempat penyimpanan
+Harga eceran
+Harga grosir
+Harga beli
+ID Supplier -> relasi dengan tabel Supplier bagian ID => menampilkan nama supplier
+Keterangan obat
+
+3. Kategori
+ID kategori
+Nama kategori
+
+4. Kategori
+ID Tempat Penyimpanan
+Nama tempat penyimpanan
+
+5. Supplier
+ID supplier
+Nama supplier
+Alamat supplier
+
+6. Penjualan (menjual obat ke pasien)
+ID / Invoice jual
+Customer
+Total
+Tgl Transaksi
+ID users -> relasi dengan tabel User bagian ID
+
+7. Pembelian (menjual obat ke pasien)
+ID / Invoice jual
+Total
+Tgl Transaksi
+ID users -> relasi dengan tabel User bagian ID
+
+8. Detail Penjualan
+ID
+ID_penjualan
+ID_obat
+jumlah_satuan_obat
+Subtotal
+
+9. Detail Pembelian
+ID
+ID_penjualan
+ID_obat
+jumlah_satuan_obat
+Subtotal
+
