@@ -40,32 +40,31 @@ Password
 Role (user / admin / superuser)
 
 
-2. Obat
-ID obat
-Nama obat
-ID Kategori -> relasi dengan tabel Kategori bagian ID obat => menampilkan kategori
-Stok
-ID Satuan obat -> relasi dengan tabel Satuan Obat bagian ID obat => menampilkan satuan stok
-Tanggal Kadaluarsa
-ID Tempat penyimpanan -> relasi dengan tabel Penyimpanan bagian ID => menampilkan tempat penyimpanan
-Harga eceran
-Harga grosir
-Harga beli
-ID Supplier -> relasi dengan tabel Supplier bagian ID => menampilkan nama supplier
-Keterangan obat
+2. medicene
+idMedicene
+MediceneName
+idCategory -> relasi dengan tabel Kategori bagian ID obat => menampilkan kategori
+stock
+idSatuan -> relasi dengan tabel Satuan Obat bagian ID obat => menampilkan satuan stok
+tglKadaluarsa
+idStorage -> relasi dengan tabel Penyimpanan bagian ID => menampilkan tempat penyimpanan
+hargaJual
+hargaBeli
+idSupplier -> relasi dengan tabel Supplier bagian ID => menampilkan nama supplier
+keterangan
 
-3. Kategori
-ID kategori
-Nama kategori
+3. category
+idCategory
+categoryName
 
-4. Kategori
-ID Tempat Penyimpanan
-Nama tempat penyimpanan
+4. storage
+idStorage
+storageName
 
-5. Supplier
-ID supplier
-Nama supplier
-Alamat supplier
+5. supplier
+idSupplier
+supplierName
+alamatSupplier
 
 6. Penjualan (menjual obat ke pasien)
 ID / Invoice jual
@@ -74,7 +73,7 @@ Total
 Tgl Transaksi
 ID users -> relasi dengan tabel User bagian ID
 
-7. Pembelian (menjual obat ke pasien)
+7. Pembelian (membeli obat ke supplier)
 ID / Invoice jual
 Total
 Tgl Transaksi

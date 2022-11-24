@@ -12,6 +12,9 @@ var supplier = db.define(
       type: Sequelize.STRING,
       allowNull: false,
     },
+    alamatSupplier: {
+      type: Sequelize.STRING,
+    },
   },
   {
     freezeTableName: true,

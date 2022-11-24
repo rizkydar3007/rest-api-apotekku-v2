@@ -65,6 +65,7 @@ controller.createSupplier = async function (req, res) {
     let supplier = await model.supplier.create({
       supplierId: req.body.supplierId,
       nameSupplier: req.body.nameSupplier,
+      alamatSupplier: req.body.alamatSupplier,
     });
     res.json({
       status: 201,
@@ -87,6 +88,7 @@ controller.updateSupplier = async function (req, res) {
       {
         supplierId: req.body.supplierId,
         nameSupplier: req.body.nameSupplier,
+        alamatSupplier: req.body.alamatSupplier,
       },
       {
         where: {
@@ -95,8 +97,9 @@ controller.updateSupplier = async function (req, res) {
       }
     );
     res.json({
-      status: 200,
+      status: 404,
       message: "Update Data Supplier Success",
+      data: supplier,
     });
   } catch (error) {
     res.json({
