@@ -1,0 +1,1094 @@
+{
+	"info": {
+		"_postman_id": "77934ef6-915b-429c-abc4-8e7d90d8b777",
+		"name": "Backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22729813"
+	},
+	"item": [
+		{
+			"name": "API Register Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\" : \"1002\",\r\n    \"name\" : \"Bram\",\r\n    \"email\" : \"bram@gmail.com\",\r\n    \"nip\" : 140744300,\r\n    \"password\" : \"bram123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1/users/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Login Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"bram@gmail.com\",\r\n    \"password\" : \"bram123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Refresh Token Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJyYW1AZ21haWwuY29tIiwicm9sZSI6InN1cGVydXNlciIsImlhdCI6MTY2OTI1MjE0MywiZXhwIjoxNjY5MzM4NTQzfQ.VFBHbzfHmAyKl1ja3jhywQ4OHSBBwHCda0OvcB-TnNw\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1/users/refresh-token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"refresh-token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API List Users Copy",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJpemt5QGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNjY5MTA5Nzc4LCJleHAiOjE2NjkxMTA2Nzh9.W2lr6XCenQThDEQoKbGG6Y2GrytGOUOJMOXGajpgrX0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/v1/users/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Logout Copy",
+			"request": {
+				"method": "POST",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "API List Unit Copy",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJpemt5QGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNjY5MjQ5ODAxLCJleHAiOjE2NjkyNTA3MDF9.wNboVDk0ZjNe6xnlDlVkEQ27p6Le3gz_oA8THsH6Zlc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/v1/unit",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"unit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Detail Unit Copy",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJpemt5QGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNjY5MjQ5ODAxLCJleHAiOjE2NjkyNTA3MDF9.wNboVDk0ZjNe6xnlDlVkEQ27p6Le3gz_oA8THsH6Zlc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/v1/unit/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"unit",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Create Unit Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"unitId\": 20,\r\n    \"nameUnit\": \"Tablet\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/unit",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"unit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Update Unit Copy",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idMedicene\" : 20,\r\n    \"namaObat\" : \"Paracetamol\",\r\n    \"categoryId\" : 20,\r\n    \"stock\" : 200,\r\n    \"unitId\" : 20,\r\n    \"storageId\" : 20,\r\n    \"tglKadaluarsa\" : \"2023-11-15\",\r\n    \"hargaBeli\" : 10000,\r\n    \"supplierId\" : 20,\r\n    \"hargaJual\" : 11000,\r\n    \"keterangan\" : \"Obat Paracetamol\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/unit/20",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"unit",
+						"20"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Delete Unit Copy",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/unit/20",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"unit",
+						"20"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API List Supplier Copy",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJyYW1AZ21haWwuY29tIiwiaWF0IjoxNjY5MjUzNTc1LCJleHAiOjE2NjkyNTQ0NzV9.lIpDhuc0EayntI--N-sHCINM4PSXp0XGvoX0Cv2YBAA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/v1/supplier",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"supplier"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Detail Supplier Copy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/v1/supplier/20",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"supplier",
+						"20"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Create Supplier Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"supplierId\": 20,\r\n    \"nameSupplier\": \"PT. Sanbe Farma\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/supplier",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"supplier"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Update Supplier Copy",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJyYW1AZ21haWwuY29tIiwiaWF0IjoxNjY5MjUzNTc1LCJleHAiOjE2NjkyNTQ0NzV9.lIpDhuc0EayntI--N-sHCINM4PSXp0XGvoX0Cv2YBAA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nameSupplier\": \"PT. Sanbe Farma\",\r\n    \"alamatSupplier\": \"Jl. Jakarta\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1/supplier/20",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"supplier",
+						"20"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Delete Supplier Copy",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/supplier/20",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"supplier",
+						"20"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API List Storage Copy",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJpemt5QGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNjY5MjQ5ODAxLCJleHAiOjE2NjkyNTA3MDF9.wNboVDk0ZjNe6xnlDlVkEQ27p6Le3gz_oA8THsH6Zlc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/v1/storage",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"storage"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Detail Storage Copy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/storage/20",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"storage",
+						"20"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Create Storage Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"storageId\" : 20,\r\n    \"nameStorage\" : \"Gudang 1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/storage",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"storage"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Update Storage Copy",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idMedicene\" : 20,\r\n    \"namaObat\" : \"Paracetamol\",\r\n    \"categoryId\" : 20,\r\n    \"stock\" : 200,\r\n    \"unitId\" : 20,\r\n    \"storageId\" : 20,\r\n    \"tglKadaluarsa\" : \"2023-11-15\",\r\n    \"hargaBeli\" : 10000,\r\n    \"supplierId\" : 20,\r\n    \"hargaJual\" : 11000,\r\n    \"keterangan\" : \"Obat Paracetamol\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/storage/20",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"storage",
+						"20"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Delete Storage Copy",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/storage/20",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"storage",
+						"20"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API List Buying Copy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/v1/buying/list-buying",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"buying",
+						"list-buying"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Detail Buying Copy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/v1/buying/list-detail",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"buying",
+						"list-detail"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Detail Buying By ID Copy",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idMedicene\" : 20,\r\n    \"namaObat\" : \"Paracetamol\",\r\n    \"categoryId\" : 20,\r\n    \"stock\" : 200,\r\n    \"unitId\" : 20,\r\n    \"storageId\" : 20,\r\n    \"tglKadaluarsa\" : \"2023-11-15\",\r\n    \"hargaBeli\" : 10000,\r\n    \"supplierId\" : 20,\r\n    \"hargaJual\" : 11000,\r\n    \"keterangan\" : \"Obat Paracetamol\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/selling/list-selling/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"selling",
+						"list-selling",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Create Buying Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"detailBuyingId\": 1,\r\n    \"buyingId\": 1,\r\n    \"detailMedicines\": [{\"id\": 10, \"qty\": 3}, {\"id\": 20, \"qty\": 2}],\r\n    \"transactionDate\": \"2022-11-20\",\r\n    \"userId\": 1001\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1/buying/insert",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"buying",
+						"insert"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API List Selling Copy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/v1/selling/list-selling",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"selling",
+						"list-selling"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Detail Selling Copy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/v1/selling/list-detail",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"selling",
+						"list-detail"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Detail Selling By ID Copy",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idMedicene\" : 20,\r\n    \"namaObat\" : \"Paracetamol\",\r\n    \"categoryId\" : 20,\r\n    \"stock\" : 200,\r\n    \"unitId\" : 20,\r\n    \"storageId\" : 20,\r\n    \"tglKadaluarsa\" : \"2023-11-15\",\r\n    \"hargaBeli\" : 10000,\r\n    \"supplierId\" : 20,\r\n    \"hargaJual\" : 11000,\r\n    \"keterangan\" : \"Obat Paracetamol\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/selling/insert",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"selling",
+						"insert"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Create Selling Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"detailSellingId\" : 10,\r\n    \"sellingId\" : 10,\r\n    \"customer\" : \"Rizky\",\r\n    \"detailMedicenes\" : [{\"idMedicene\": 10, \"qty\": 3}, {\"idMedicene\" : 20, \"qty\": 2}],\r\n    \"transactionDate\" : \"2023-11-22\",\r\n    \"userId\" : 1001\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1/buying/insert",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"buying",
+						"insert"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API List Medicene Copy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/v1/medicene/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"medicene",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Detail Medicene Copy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/medicene/20",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"medicene",
+						"20"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Create Medicene Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idMedicene\" : 30,\r\n    \"namaObat\" : \"Panadol\",\r\n    \"categoryId\" : 20,\r\n    \"stock\" : 100,\r\n    \"unitId\" : 10,\r\n    \"storageId\" : 10,\r\n    \"tglKadaluarsa\" : \"2024-12-01\",\r\n    \"hargaBeli\" : 5000,\r\n    \"supplierId\" : 10,\r\n    \"hargaJual\" : 6000,\r\n    \"keterangan\" : \"Obat Paracetamol\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/medicene",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"medicene"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Update Medicene Copy",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idMedicene\": 20,\r\n    \"namaObat\": \"Paracetamol\",\r\n    \"categoryId\": 10,\r\n    \"stock\": 200,\r\n    \"unitId\": 20,\r\n    \"storageId\": 20,\r\n    \"tglKadaluarsa\": \"2023-11-15\",\r\n    \"hargaBeli\": 10000,\r\n    \"supplierId\": 20,\r\n    \"hargaJual\": 11000,\r\n    \"keterangan\": \"Obat Paracetamol\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/medicene/20",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"medicene",
+						"20"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Delete Medicene Copy",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/medicene/30",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"medicene",
+						"30"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API List Category Copy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/v1/category",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"category"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Detail Category Copy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/category/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"category",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Create Category Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idMedicene\" : 20,\r\n    \"namaObat\" : \"Paracetamol\",\r\n    \"categoryId\" : 20,\r\n    \"stock\" : 200,\r\n    \"unitId\" : 20,\r\n    \"storageId\" : 20,\r\n    \"tglKadaluarsa\" : \"2023-11-15\",\r\n    \"hargaBeli\" : 10000,\r\n    \"supplierId\" : 20,\r\n    \"hargaJual\" : 11000,\r\n    \"keterangan\" : \"Obat Paracetamol\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/category",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"category"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Update Category Copy",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idMedicene\" : 20,\r\n    \"namaObat\" : \"Paracetamol\",\r\n    \"categoryId\" : 20,\r\n    \"stock\" : 200,\r\n    \"unitId\" : 20,\r\n    \"storageId\" : 20,\r\n    \"tglKadaluarsa\" : \"2023-11-15\",\r\n    \"hargaBeli\" : 10000,\r\n    \"supplierId\" : 20,\r\n    \"hargaJual\" : 11000,\r\n    \"keterangan\" : \"Obat Paracetamol\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/category/20",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"category",
+						"20"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Delete Category Copy",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/category/20",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"category",
+						"20"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

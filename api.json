@@ -1,0 +1,1870 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0",
+      "title": "Backend",
+      "contact": {}
+    },
+    "host": "localhost:5000",
+    "basePath": "/api/v1",
+    "securityDefinitions": {},
+    "schemes": [
+      "http"
+    ],
+    "consumes": [
+      "application/json"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "paths": {
+      "/users/register": {
+        "post": {
+          "summary": "API Register ",
+          "tags": [
+            "Users"
+          ],
+          "operationId": "APIRegister",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "required": false,
+              "default": "Bearer {token}",
+              "type": "string"
+            },
+            {
+              "name": "Body",
+              "in": "body",
+              "required": true,
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/APIRegisterRequest"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          }
+        }
+      },
+      "/users/login": {
+        "post": {
+          "summary": "API Login ",
+          "tags": [
+            "Users"
+          ],
+          "operationId": "APILogin",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "required": false,
+              "default": "Bearer {token}",
+              "type": "string"
+            },
+            {
+              "name": "Body",
+              "in": "body",
+              "required": true,
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/APILoginRequest"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          }
+        }
+      },
+      "/users/refresh-token": {
+        "post": {
+          "summary": "API Refresh Token ",
+          "tags": [
+            "Users"
+          ],
+          "operationId": "APIRefreshToken",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "required": false,
+              "default": "Bearer {token}",
+              "type": "string"
+            },
+            {
+              "name": "Body",
+              "in": "body",
+              "required": true,
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/APIRefreshTokenRequest"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          }
+        }
+      },
+      "/users/list": {
+        "get": {
+          "summary": "API List Users ",
+          "tags": [
+            "Users"
+          ],
+          "operationId": "APIListUsers",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          },
+          "security": []
+        }
+      },
+      "/": {
+        "post": {
+          "summary": "API Logout ",
+          "tags": [
+            "Users"
+          ],
+          "operationId": "APILogout",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "required": false,
+              "default": "Bearer {token}",
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          }
+        }
+      },
+      "/unit": {
+        "get": {
+          "summary": "API List Unit ",
+          "tags": [
+            "Unit"
+          ],
+          "operationId": "APIListUnit",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          },
+          "security": []
+        },
+        "post": {
+          "summary": "API Create Unit ",
+          "tags": [
+            "Unit"
+          ],
+          "operationId": "APICreateUnit",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "required": false,
+              "default": "Bearer {token}",
+              "type": "string"
+            },
+            {
+              "name": "Body",
+              "in": "body",
+              "required": true,
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/APICreateUnitRequest"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          }
+        }
+      },
+      "/unit/10": {
+        "get": {
+          "summary": "API Detail Unit ",
+          "tags": [
+            "Unit"
+          ],
+          "operationId": "APIDetailUnit",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          },
+          "security": []
+        }
+      },
+      "/unit/20": {
+        "put": {
+          "summary": "API Update Unit ",
+          "tags": [
+            "Unit"
+          ],
+          "operationId": "APIUpdateUnit",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "required": false,
+              "default": "Bearer {token}",
+              "type": "string"
+            },
+            {
+              "name": "Body",
+              "in": "body",
+              "required": true,
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/APIUpdateUnitRequest"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          }
+        },
+        "delete": {
+          "summary": "API Delete Unit ",
+          "tags": [
+            "Unit"
+          ],
+          "operationId": "APIDeleteUnit",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "required": false,
+              "default": "Bearer {token}",
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          }
+        }
+      },
+      "/supplier": {
+        "get": {
+          "summary": "API List Supplier ",
+          "tags": [
+            "Supplier"
+          ],
+          "operationId": "APIListSupplier",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          },
+          "security": []
+        },
+        "post": {
+          "summary": "API Create Supplier ",
+          "tags": [
+            "Supplier"
+          ],
+          "operationId": "APICreateSupplier",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "required": false,
+              "default": "Bearer {token}",
+              "type": "string"
+            },
+            {
+              "name": "Body",
+              "in": "body",
+              "required": true,
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/APICreateSupplierRequest"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          }
+        }
+      },
+      "/supplier/20": {
+        "get": {
+          "summary": "API Detail Supplier ",
+          "tags": [
+            "Supplier"
+          ],
+          "operationId": "APIDetailSupplier",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "required": false,
+              "default": "Bearer {token}",
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          }
+        },
+        "put": {
+          "summary": "API Update Supplier ",
+          "tags": [
+            "Supplier"
+          ],
+          "operationId": "APIUpdateSupplier",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "Body",
+              "in": "body",
+              "required": true,
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/APIUpdateSupplierRequest"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          },
+          "security": []
+        },
+        "delete": {
+          "summary": "API Delete Supplier ",
+          "tags": [
+            "Supplier"
+          ],
+          "operationId": "APIDeleteSupplier",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "required": false,
+              "default": "Bearer {token}",
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          }
+        }
+      },
+      "/storage": {
+        "get": {
+          "summary": "API List Storage ",
+          "tags": [
+            "Storage"
+          ],
+          "operationId": "APIListStorage",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          },
+          "security": []
+        },
+        "post": {
+          "summary": "API Create Storage ",
+          "tags": [
+            "Storage"
+          ],
+          "operationId": "APICreateStorage",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "required": false,
+              "default": "Bearer {token}",
+              "type": "string"
+            },
+            {
+              "name": "Body",
+              "in": "body",
+              "required": true,
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/APICreateStorageRequest"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          }
+        }
+      },
+      "/storage/20": {
+        "get": {
+          "summary": "API Detail Storage ",
+          "tags": [
+            "Storage"
+          ],
+          "operationId": "APIDetailStorage",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "required": false,
+              "default": "Bearer {token}",
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          }
+        },
+        "put": {
+          "summary": "API Update Storage ",
+          "tags": [
+            "Storage"
+          ],
+          "operationId": "APIUpdateStorage",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "required": false,
+              "default": "Bearer {token}",
+              "type": "string"
+            },
+            {
+              "name": "Body",
+              "in": "body",
+              "required": true,
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/APIUpdateStorageRequest"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          }
+        },
+        "delete": {
+          "summary": "API Delete Storage ",
+          "tags": [
+            "Storage"
+          ],
+          "operationId": "APIDeleteStorage",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "required": false,
+              "default": "Bearer {token}",
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          }
+        }
+      },
+      "/buying/list-buying": {
+        "get": {
+          "summary": "API List Buying ",
+          "tags": [
+            "Buying"
+          ],
+          "operationId": "APIListBuying",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "required": false,
+              "default": "Bearer {token}",
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          }
+        }
+      },
+      "/buying/list-detail": {
+        "get": {
+          "summary": "API Detail Buying ",
+          "tags": [
+            "Buying"
+          ],
+          "operationId": "APIDetailBuying",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "required": false,
+              "default": "Bearer {token}",
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          }
+        }
+      },
+      "/selling/list-selling/{id}": {
+        "get": {
+          "summary": "API Detail Buying By ID ",
+          "tags": [
+            "Buying"
+          ],
+          "operationId": "APIDetailBuyingByID",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "required": false,
+              "default": "Bearer {token}",
+              "type": "string"
+            },
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "type": "string",
+              "description": ""
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          }
+        }
+      },
+      "/buying/insert": {
+        "post": {
+          "summary": "API Create Buying ",
+          "tags": [
+            "Buying"
+          ],
+          "operationId": "APICreateBuying",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "required": false,
+              "default": "Bearer {token}",
+              "type": "string"
+            },
+            {
+              "name": "Body",
+              "in": "body",
+              "required": true,
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/APICreateBuyingRequest"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          }
+        }
+      },
+      "/selling/list-selling": {
+        "get": {
+          "summary": "API List Selling ",
+          "tags": [
+            "Selling"
+          ],
+          "operationId": "APIListSelling",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "required": false,
+              "default": "Bearer {token}",
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          }
+        }
+      },
+      "/selling/list-detail": {
+        "get": {
+          "summary": "API Detail Selling ",
+          "tags": [
+            "Selling"
+          ],
+          "operationId": "APIDetailSelling",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "required": false,
+              "default": "Bearer {token}",
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          }
+        }
+      },
+      "/selling/insert": {
+        "get": {
+          "summary": "API Detail Selling By ID ",
+          "tags": [
+            "Selling"
+          ],
+          "operationId": "APIDetailSellingByID",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "required": false,
+              "default": "Bearer {token}",
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          }
+        }
+      },
+      "/medicene": {
+        "get": {
+          "summary": "API List Medicene ",
+          "tags": [
+            "Medicene"
+          ],
+          "operationId": "APIListMedicene",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "required": false,
+              "default": "Bearer {token}",
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          }
+        },
+        "post": {
+          "summary": "API Create Medicene ",
+          "tags": [
+            "Medicene"
+          ],
+          "operationId": "APICreateMedicene",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "required": false,
+              "default": "Bearer {token}",
+              "type": "string"
+            },
+            {
+              "name": "Body",
+              "in": "body",
+              "required": true,
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/APICreateMediceneRequest"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          }
+        }
+      },
+      "/medicene/20": {
+        "get": {
+          "summary": "API Detail Medicene ",
+          "tags": [
+            "Medicene"
+          ],
+          "operationId": "APIDetailMedicene",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "required": false,
+              "default": "Bearer {token}",
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          }
+        },
+        "put": {
+          "summary": "API Update Medicene ",
+          "tags": [
+            "Medicene"
+          ],
+          "operationId": "APIUpdateMedicene",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "required": false,
+              "default": "Bearer {token}",
+              "type": "string"
+            },
+            {
+              "name": "Body",
+              "in": "body",
+              "required": true,
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/APIUpdateMediceneRequest"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          }
+        }
+      },
+      "/medicene/30": {
+        "delete": {
+          "summary": "API Delete Medicene ",
+          "tags": [
+            "Medicene"
+          ],
+          "operationId": "APIDeleteMedicene",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "required": false,
+              "default": "Bearer {token}",
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          }
+        }
+      },
+      "/category": {
+        "get": {
+          "summary": "API List Category ",
+          "tags": [
+            "Category"
+          ],
+          "operationId": "APIListCategory",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "required": false,
+              "default": "Bearer {token}",
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          }
+        },
+        "post": {
+          "summary": "API Create Category ",
+          "tags": [
+            "Category"
+          ],
+          "operationId": "APICreateCategory",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "required": false,
+              "default": "Bearer {token}",
+              "type": "string"
+            },
+            {
+              "name": "Body",
+              "in": "body",
+              "required": true,
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/APICreateCategoryRequest"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          }
+        }
+      },
+      "/category/10": {
+        "get": {
+          "summary": "API Detail Category ",
+          "tags": [
+            "Category"
+          ],
+          "operationId": "APIDetailCategory",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "required": false,
+              "default": "Bearer {token}",
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          }
+        }
+      },
+      "/category/20": {
+        "put": {
+          "summary": "API Update Category ",
+          "tags": [
+            "Category"
+          ],
+          "operationId": "APIUpdateCategory",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "required": false,
+              "default": "Bearer {token}",
+              "type": "string"
+            },
+            {
+              "name": "Body",
+              "in": "body",
+              "required": true,
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/APIUpdateCategoryRequest"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          }
+        },
+        "delete": {
+          "summary": "API Delete Category ",
+          "tags": [
+            "Category"
+          ],
+          "operationId": "APIDeleteCategory",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "required": false,
+              "default": "Bearer {token}",
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          }
+        }
+      }
+    },
+    "definitions": {
+      "APIRegisterRequest": {
+        "title": "APIRegisterRequest",
+        "example": {
+          "id": "1002",
+          "name": "Bram",
+          "email": "bram@gmail.com",
+          "nip": 140744300,
+          "password": "bram123"
+        },
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "nip": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "password": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "email",
+          "nip",
+          "password"
+        ]
+      },
+      "APILoginRequest": {
+        "title": "APILoginRequest",
+        "example": {
+          "email": "bram@gmail.com",
+          "password": "bram123"
+        },
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "email",
+          "password"
+        ]
+      },
+      "APIRefreshTokenRequest": {
+        "title": "APIRefreshTokenRequest",
+        "example": {
+          "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJyYW1AZ21haWwuY29tIiwicm9sZSI6InN1cGVydXNlciIsImlhdCI6MTY2OTI1MjE0MywiZXhwIjoxNjY5MzM4NTQzfQ.VFBHbzfHmAyKl1ja3jhywQ4OHSBBwHCda0OvcB-TnNw"
+        },
+        "type": "object",
+        "properties": {
+          "refreshToken": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "refreshToken"
+        ]
+      },
+      "APICreateUnitRequest": {
+        "title": "APICreateUnitRequest",
+        "example": {
+          "unitId": 20,
+          "nameUnit": "Tablet"
+        },
+        "type": "object",
+        "properties": {
+          "unitId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nameUnit": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "unitId",
+          "nameUnit"
+        ]
+      },
+      "APIUpdateUnitRequest": {
+        "title": "APIUpdateUnitRequest",
+        "example": {
+          "idMedicene": 20,
+          "namaObat": "Paracetamol",
+          "categoryId": 20,
+          "stock": 200,
+          "unitId": 20,
+          "storageId": 20,
+          "tglKadaluarsa": "2023-11-15",
+          "hargaBeli": 10000,
+          "supplierId": 20,
+          "hargaJual": 11000,
+          "keterangan": "Obat Paracetamol"
+        },
+        "type": "object",
+        "properties": {
+          "idMedicene": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "namaObat": {
+            "type": "string"
+          },
+          "categoryId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "stock": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "unitId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "storageId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tglKadaluarsa": {
+            "type": "string"
+          },
+          "hargaBeli": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "supplierId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "hargaJual": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "keterangan": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "idMedicene",
+          "namaObat",
+          "categoryId",
+          "stock",
+          "unitId",
+          "storageId",
+          "tglKadaluarsa",
+          "hargaBeli",
+          "supplierId",
+          "hargaJual",
+          "keterangan"
+        ]
+      },
+      "APICreateSupplierRequest": {
+        "title": "APICreateSupplierRequest",
+        "example": {
+          "supplierId": 20,
+          "nameSupplier": "PT. Sanbe Farma"
+        },
+        "type": "object",
+        "properties": {
+          "supplierId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nameSupplier": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "supplierId",
+          "nameSupplier"
+        ]
+      },
+      "APIUpdateSupplierRequest": {
+        "title": "APIUpdateSupplierRequest",
+        "example": {
+          "nameSupplier": "PT. Sanbe Farma",
+          "alamatSupplier": "Jl. Jakarta"
+        },
+        "type": "object",
+        "properties": {
+          "nameSupplier": {
+            "type": "string"
+          },
+          "alamatSupplier": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "nameSupplier",
+          "alamatSupplier"
+        ]
+      },
+      "APICreateStorageRequest": {
+        "title": "APICreateStorageRequest",
+        "example": {
+          "storageId": 20,
+          "nameStorage": "Gudang 1"
+        },
+        "type": "object",
+        "properties": {
+          "storageId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nameStorage": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "storageId",
+          "nameStorage"
+        ]
+      },
+      "APIUpdateStorageRequest": {
+        "title": "APIUpdateStorageRequest",
+        "example": {
+          "idMedicene": 20,
+          "namaObat": "Paracetamol",
+          "categoryId": 20,
+          "stock": 200,
+          "unitId": 20,
+          "storageId": 20,
+          "tglKadaluarsa": "2023-11-15",
+          "hargaBeli": 10000,
+          "supplierId": 20,
+          "hargaJual": 11000,
+          "keterangan": "Obat Paracetamol"
+        },
+        "type": "object",
+        "properties": {
+          "idMedicene": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "namaObat": {
+            "type": "string"
+          },
+          "categoryId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "stock": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "unitId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "storageId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tglKadaluarsa": {
+            "type": "string"
+          },
+          "hargaBeli": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "supplierId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "hargaJual": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "keterangan": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "idMedicene",
+          "namaObat",
+          "categoryId",
+          "stock",
+          "unitId",
+          "storageId",
+          "tglKadaluarsa",
+          "hargaBeli",
+          "supplierId",
+          "hargaJual",
+          "keterangan"
+        ]
+      },
+      "APICreateBuyingRequest": {
+        "title": "APICreateBuyingRequest",
+        "example": {
+          "detailBuyingId": 1,
+          "buyingId": 1,
+          "detailMedicines": [
+            {
+              "id": 10,
+              "qty": 3
+            },
+            {
+              "id": 20,
+              "qty": 2
+            }
+          ],
+          "transactionDate": "2022-11-20",
+          "userId": 1001
+        },
+        "type": "object",
+        "properties": {
+          "detailBuyingId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "buyingId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "detailMedicines": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/DetailMedicine"
+            }
+          },
+          "transactionDate": {
+            "type": "string"
+          },
+          "userId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "required": [
+          "detailBuyingId",
+          "buyingId",
+          "detailMedicines",
+          "transactionDate",
+          "userId"
+        ]
+      },
+      "DetailMedicine": {
+        "title": "DetailMedicine",
+        "example": {
+          "id": 10,
+          "qty": 3
+        },
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "qty": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "required": [
+          "id",
+          "qty"
+        ]
+      },
+      "APICreateSellingRequest": {
+        "title": "APICreateSellingRequest",
+        "example": {
+          "detailSellingId": 10,
+          "sellingId": 10,
+          "customer": "Rizky",
+          "detailMedicenes": [
+            {
+              "idMedicene": 10,
+              "qty": 3
+            },
+            {
+              "idMedicene": 20,
+              "qty": 2
+            }
+          ],
+          "transactionDate": "2023-11-22",
+          "userId": 1001
+        },
+        "type": "object",
+        "properties": {
+          "detailSellingId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "sellingId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "customer": {
+            "type": "string"
+          },
+          "detailMedicenes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/DetailMedicene"
+            }
+          },
+          "transactionDate": {
+            "type": "string"
+          },
+          "userId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "required": [
+          "detailSellingId",
+          "sellingId",
+          "customer",
+          "detailMedicenes",
+          "transactionDate",
+          "userId"
+        ]
+      },
+      "DetailMedicene": {
+        "title": "DetailMedicene",
+        "example": {
+          "idMedicene": 10,
+          "qty": 3
+        },
+        "type": "object",
+        "properties": {
+          "idMedicene": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "qty": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "required": [
+          "idMedicene",
+          "qty"
+        ]
+      },
+      "APICreateMediceneRequest": {
+        "title": "APICreateMediceneRequest",
+        "example": {
+          "idMedicene": 30,
+          "namaObat": "Panadol",
+          "categoryId": 20,
+          "stock": 100,
+          "unitId": 10,
+          "storageId": 10,
+          "tglKadaluarsa": "2024-12-01",
+          "hargaBeli": 5000,
+          "supplierId": 10,
+          "hargaJual": 6000,
+          "keterangan": "Obat Paracetamol"
+        },
+        "type": "object",
+        "properties": {
+          "idMedicene": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "namaObat": {
+            "type": "string"
+          },
+          "categoryId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "stock": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "unitId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "storageId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tglKadaluarsa": {
+            "type": "string"
+          },
+          "hargaBeli": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "supplierId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "hargaJual": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "keterangan": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "idMedicene",
+          "namaObat",
+          "categoryId",
+          "stock",
+          "unitId",
+          "storageId",
+          "tglKadaluarsa",
+          "hargaBeli",
+          "supplierId",
+          "hargaJual",
+          "keterangan"
+        ]
+      },
+      "APIUpdateMediceneRequest": {
+        "title": "APIUpdateMediceneRequest",
+        "example": {
+          "idMedicene": 20,
+          "namaObat": "Paracetamol",
+          "categoryId": 10,
+          "stock": 200,
+          "unitId": 20,
+          "storageId": 20,
+          "tglKadaluarsa": "2023-11-15",
+          "hargaBeli": 10000,
+          "supplierId": 20,
+          "hargaJual": 11000,
+          "keterangan": "Obat Paracetamol"
+        },
+        "type": "object",
+        "properties": {
+          "idMedicene": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "namaObat": {
+            "type": "string"
+          },
+          "categoryId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "stock": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "unitId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "storageId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tglKadaluarsa": {
+            "type": "string"
+          },
+          "hargaBeli": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "supplierId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "hargaJual": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "keterangan": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "idMedicene",
+          "namaObat",
+          "categoryId",
+          "stock",
+          "unitId",
+          "storageId",
+          "tglKadaluarsa",
+          "hargaBeli",
+          "supplierId",
+          "hargaJual",
+          "keterangan"
+        ]
+      },
+      "APICreateCategoryRequest": {
+        "title": "APICreateCategoryRequest",
+        "example": {
+          "idMedicene": 20,
+          "namaObat": "Paracetamol",
+          "categoryId": 20,
+          "stock": 200,
+          "unitId": 20,
+          "storageId": 20,
+          "tglKadaluarsa": "2023-11-15",
+          "hargaBeli": 10000,
+          "supplierId": 20,
+          "hargaJual": 11000,
+          "keterangan": "Obat Paracetamol"
+        },
+        "type": "object",
+        "properties": {
+          "idMedicene": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "namaObat": {
+            "type": "string"
+          },
+          "categoryId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "stock": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "unitId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "storageId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tglKadaluarsa": {
+            "type": "string"
+          },
+          "hargaBeli": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "supplierId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "hargaJual": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "keterangan": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "idMedicene",
+          "namaObat",
+          "categoryId",
+          "stock",
+          "unitId",
+          "storageId",
+          "tglKadaluarsa",
+          "hargaBeli",
+          "supplierId",
+          "hargaJual",
+          "keterangan"
+        ]
+      },
+      "APIUpdateCategoryRequest": {
+        "title": "APIUpdateCategoryRequest",
+        "example": {
+          "idMedicene": 20,
+          "namaObat": "Paracetamol",
+          "categoryId": 20,
+          "stock": 200,
+          "unitId": 20,
+          "storageId": 20,
+          "tglKadaluarsa": "2023-11-15",
+          "hargaBeli": 10000,
+          "supplierId": 20,
+          "hargaJual": 11000,
+          "keterangan": "Obat Paracetamol"
+        },
+        "type": "object",
+        "properties": {
+          "idMedicene": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "namaObat": {
+            "type": "string"
+          },
+          "categoryId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "stock": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "unitId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "storageId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tglKadaluarsa": {
+            "type": "string"
+          },
+          "hargaBeli": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "supplierId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "hargaJual": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "keterangan": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "idMedicene",
+          "namaObat",
+          "categoryId",
+          "stock",
+          "unitId",
+          "storageId",
+          "tglKadaluarsa",
+          "hargaBeli",
+          "supplierId",
+          "hargaJual",
+          "keterangan"
+        ]
+      }
+    },
+    "security": []
+  }

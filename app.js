@@ -1,10 +1,15 @@
 require("dotenv").config();
 const express = require("express");
+const cors = require("cors");
 const app = express();
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const mainRouter = require("./routes/index");
 
+app.use(cors());
+const swaggerUi = require("swagger-ui-express");
+const api = require("./api.json");
+app.use("/api-docs/user", swaggerUi.serve, swaggerUi.setup(api));
 app.use(morgan("dev"));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());

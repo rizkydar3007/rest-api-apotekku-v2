@@ -1,2 +1,3 @@
 Password : 6 - 20 karakter
 NIP : 8 - 20 digit angka
+
