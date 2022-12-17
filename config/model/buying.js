@@ -150,6 +150,66 @@ const insertDetailBuying = (detailSellingId, sellingId, detailMedicines) => {
     })
   );
 };
+const searchByBuyingDate = (startDate, endDate) => {
+  return new Promise((resolve, reject) =>
+    connection.query(
+      `SELECT * FROM pembelian WHERE tgl_transaksi BETWEEN '${startDate}' AND '${endDate}'`,
+      (error, result) => {
+        if (!error) {
+          resolve(result)
+        } else {
+          reject(error)
+        }
+      }
+    )
+  )
+};
+
+const searchByBuyingId = (buyingId) => {
+  return new Promise((resolve, reject) =>
+    connection.query(
+      `SELECT * FROM detail_pembelian WHERE ID_pembelian = ${buyingId}`,
+      (error, result) => {
+        if (!error) {
+          resolve(result)
+        } else {
+          reject(error)
+        }
+      }
+    )
+  )
+};
+
+const searchByBuyingIdAsc = () => {
+  return new Promise((resolve, reject) =>
+    connection.query(
+      `SELECT * FROM detail_pembelian ORDER BY ID_pembelian ASC`,
+      (error, result) => {
+        if (!error) {
+          resolve(result)
+        } else {
+          reject(error)
+        }
+      }
+    )
+  )
+};
+
+const searchByBuyingIdDesc = () => {
+  return new Promise((resolve, reject) =>
+    connection.query(
+      `SELECT * FROM detail_pembelian ORDER BY ID_pembelian DESC`,
+      (error, result) => {
+        if (!error) {
+          resolve(result)
+        } else {
+          reject(error)
+        }
+      }
+    )
+  )
+};
+
 
 module.exports = {
   selectAllDetailBuying,
@@ -160,4 +220,8 @@ module.exports = {
   selectAllBuyingById,
   countAllBuying,
   countAllDetailBuying,
+  searchByBuyingDate,
+  searchByBuyingId,
+  searchByBuyingIdAsc,
+  searchByBuyingIdDesc
 };

@@ -630,6 +630,41 @@
           }
         }
       },
+      "/buying/list-buying/{id}": {
+        "get": {
+          "summary": "API Detail Buying By ID ",
+          "tags": [
+            "Buying"
+          ],
+          "operationId": "APIDetailBuyingByID",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "required": false,
+              "default": "Bearer {token}",
+              "type": "string"
+            },
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "type": "string",
+              "description": ""
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          }
+        }
+      },
       "/buying/list-detail": {
         "get": {
           "summary": "API Detail Buying ",
@@ -660,11 +695,11 @@
       },
       "/selling/list-selling/{id}": {
         "get": {
-          "summary": "API Detail Buying By ID ",
+          "summary": "API Detail Selling By ID ",
           "tags": [
-            "Buying"
+            "Selling"
           ],
-          "operationId": "APIDetailBuyingByID",
+          "operationId": "APIDetailSellingByID",
           "deprecated": false,
           "produces": [
             "application/json"
@@ -804,6 +839,43 @@
               "required": false,
               "default": "Bearer {token}",
               "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          }
+        }
+      },
+      "/selling/insert": {
+        "post": {
+          "summary": "API Create Selling ",
+          "tags": [
+            "Selling"
+          ],
+          "operationId": "APICreateSelling",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "required": false,
+              "default": "Bearer {token}",
+              "type": "string"
+            },
+            {
+              "name": "Body",
+              "in": "body",
+              "required": true,
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/APICreateSellingRequest"
+              }
             }
           ],
           "responses": {
