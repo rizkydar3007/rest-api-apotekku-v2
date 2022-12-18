@@ -62,9 +62,10 @@ const buyingController = {
       const offset = (page - 1) * limit;
       const orderby = req.query.orderby || "pembelian.ID";
       const order = req.query.order || "DESC";
+      const search = req.query.search || ""
 
       //Menjalankan fungsi select all dan membuat pagination
-      const result = await selectAllBuying(limit, offset, orderby, order);
+      const result = await selectAllBuying(limit, offset, orderby, order, search);
       const [buyingCount] = await countAllBuying();
       const totalData = buyingCount.count;
       const totalPage = Math.ceil(totalData / limit);

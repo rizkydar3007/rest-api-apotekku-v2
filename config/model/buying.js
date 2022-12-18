@@ -22,10 +22,11 @@ const selectAllDetailBuying = (limit, offset, orderby, order, search) => {
   );
 };
 
-const selectAllBuying = (limit, offset, orderby, order) => {
+const selectAllBuying = (limit, offset, orderby, order, search) => {
   return new Promise((resolve, reject) =>
     connection.query(
       `SELECT * FROM pembelian
+      WHERE ${orderby} LIKE '%${search}%'
       ORDER BY ${orderby} ${order} LIMIT ${limit} OFFSET ${offset}`,
       (error, result) => {
         if (!error) {
