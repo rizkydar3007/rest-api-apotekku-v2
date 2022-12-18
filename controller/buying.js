@@ -8,11 +8,8 @@ const {
   deleteBuying,
   countAllBuying,
   countAllDetailBuying,
-  searchByBuyingDate,
-  searchByBuyingId,
-  searchByBuyingIdAsc,
-  searchByBuyingIdDesc
 } = require('../config/model/buying');
+
 
 const buyingController = {
   listDetailBuying: async (req, res) => {
@@ -22,10 +19,11 @@ const buyingController = {
       const limit = req.query.limit || 10;
       const offset = (page - 1) * limit;
       const orderby = req.query.orderby || "detail_pembelian.ID";
-      const order = req.query.order || "DESC";
+      const order = req.query.order || "";
+      const search = req.query.search || "";
 
       //Menjalankan fungsi select all dan membuat pagination
-      const result = await selectAllDetailBuying(limit, offset, orderby, order);
+      const result = await selectAllDetailBuying(limit, offset, orderby, order, search);
       const [detailBuyingCount] = await countAllDetailBuying();
       const totalData = detailBuyingCount.count;
       const totalPage = Math.ceil(totalData / limit);
@@ -192,127 +190,6 @@ const buyingController = {
         deleteBuying(buyingId);
       }
       return res.send(error);
-    }
-  },
-  searchByBuyingDate: async (req, res) => {
-    try {
-      // Mengambil query dan memberi nilai default
-      const startDate = req.body.start_date;
-      const endDate = req.body.end_date;
-      
-
-      //Menjalankan fungsi select all dan membuat pagination
-      const result = await searchByBuyingDate(startDate, endDate);
-      
-      
-
-      //Menampilkan hasil atau error
-      commonHelper.response(res, result, 200, "Get data success!");
-    } catch (error) {
-      console.log(error);
-      if (
-        error.code === "ER_SP_UNDECLARED_VAR" ||
-        error.code === "ER_BAD_FIELD_ERROR"
-      ) {
-        commonHelper.response(
-          res,
-          error,
-          400,
-          "Failed to get data! Check your query params!"
-        );
-      } else {
-        commonHelper.response(res, null, 500);
-      }
-    }
-  },
-  searchByBuyingId: async (req, res) => {
-    try {
-      // Mengambil query dan memberi nilai default
-      const buyingId = req.body.buying_id;
-      
-
-      //Menjalankan fungsi select all dan membuat pagination
-      const result = await searchByBuyingId(buyingId);
-      
-      
-
-      //Menampilkan hasil atau error
-      commonHelper.response(res, result, 200, "Get data success!");
-    } catch (error) {
-      console.log(error);
-      if (
-        error.code === "ER_SP_UNDECLARED_VAR" ||
-        error.code === "ER_BAD_FIELD_ERROR"
-      ) {
-        commonHelper.response(
-          res,
-          error,
-          400,
-          "Failed to get data! Check your query params!"
-        );
-      } else {
-        commonHelper.response(res, null, 500);
-      }
-    }
-  },
-  searchByBuyingIdAsc: async (req, res) => {
-    try {
-      // Mengambil query dan memberi nilai default
-      
-      
-
-      //Menjalankan fungsi select all dan membuat pagination
-      const result = await searchByBuyingIdAsc();
-      
-      
-
-      //Menampilkan hasil atau error
-      commonHelper.response(res, result, 200, "Get data success!");
-    } catch (error) {
-      console.log(error);
-      if (
-        error.code === "ER_SP_UNDECLARED_VAR" ||
-        error.code === "ER_BAD_FIELD_ERROR"
-      ) {
-        commonHelper.response(
-          res,
-          error,
-          400,
-          "Failed to get data! Check your query params!"
-        );
-      } else {
-        commonHelper.response(res, null, 500);
-      }
-    }
-  },
-  searchByBuyingIdDesc: async (req, res) => {
-    try {
-      // Mengambil query dan memberi nilai default
-      
-      
-
-      //Menjalankan fungsi select all dan membuat pagination
-      const result = await searchByBuyingIdDesc();
-      
-      
-
-      //Menampilkan hasil atau error
-      commonHelper.response(res, result, 200, "Get data success!");
-    } catch (error) {
-      console.log(error);
-      if (
-        error.code === "ER_SP_UNDECLARED_VAR" ||
-        error.code === "ER_BAD_FIELD_ERROR"
-      ) {
-        commonHelper.response(
-          res,
-          error,
-          400,
-          "Failed to get data! Check your query params!"
-        );
-      } else {
-        commonHelper.response(res, null, 500);
-      }
     }
   },
 };

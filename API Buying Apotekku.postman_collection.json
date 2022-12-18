@@ -1,0 +1,145 @@
+{
+	"info": {
+		"_postman_id": "18bb2c83-c2df-40ac-a4ba-32fb0820f604",
+		"name": "API Buying Apotekku",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "API Create Buying",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"detailBuyingId\": 5,\r\n    \"buyingId\": 3,\r\n    \"detailMedicines\": [{\"id\": 10, \"qty\": 3}, {\"id\": 20, \"qty\": 2}],\r\n    \"transactionDate\": \"2022-12-5\",\r\n    \"userId\": 1001\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1/buying/insert",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"buying",
+						"insert"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Detail Buying By ID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idMedicene\" : 20,\r\n    \"namaObat\" : \"Paracetamol\",\r\n    \"categoryId\" : 20,\r\n    \"stock\" : 200,\r\n    \"unitId\" : 20,\r\n    \"storageId\" : 20,\r\n    \"tglKadaluarsa\" : \"2023-11-15\",\r\n    \"hargaBeli\" : 10000,\r\n    \"supplierId\" : 20,\r\n    \"hargaJual\" : 11000,\r\n    \"keterangan\" : \"Obat Paracetamol\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/selling/list-selling/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"selling",
+						"list-selling",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Detail Buying",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/v1/buying/list-detail?orderby=tgl_transaksi&order=ASC&search=2022-12-05",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"buying",
+						"list-detail"
+					],
+					"query": [
+						{
+							"key": "orderby",
+							"value": "tgl_transaksi"
+						},
+						{
+							"key": "order",
+							"value": "ASC"
+						},
+						{
+							"key": "search",
+							"value": "2022-12-05"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API List Buying",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/v1/buying/list-buying",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"buying",
+						"list-buying"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,6 +1,6 @@
 const connection = require("../database/db");
 
-const selectAllDetailBuying = (limit, offset, orderby, order) => {
+const selectAllDetailBuying = (limit, offset, orderby, order, search) => {
   return new Promise((resolve, reject) =>
     connection.query(
       `SELECT detail_pembelian.ID, medicene.namaObat, detail_pembelian.jumlah_satuan_obat, detail_pembelian.Subtotal, detail_pembelian.ID_pembelian, (SELECT SUM(detail_pembelian.Subtotal) AS harga_total FROM detail_pembelian) AS harga_total, pembelian.tgl_transaksi
@@ -9,6 +9,7 @@ const selectAllDetailBuying = (limit, offset, orderby, order) => {
       ON detail_pembelian.ID_obat = medicene.idMedicene
       JOIN pembelian
       ON detail_pembelian.ID_pembelian = pembelian.ID
+      WHERE ${orderby} LIKE '%${search}%'
       ORDER BY ${orderby} ${order} LIMIT ${limit} OFFSET ${offset}`,
       (error, result) => {
         if (!error) {
@@ -150,66 +151,6 @@ const insertDetailBuying = (detailSellingId, sellingId, detailMedicines) => {
     })
   );
 };
-const searchByBuyingDate = (startDate, endDate) => {
-  return new Promise((resolve, reject) =>
-    connection.query(
-      `SELECT * FROM pembelian WHERE tgl_transaksi BETWEEN '${startDate}' AND '${endDate}'`,
-      (error, result) => {
-        if (!error) {
-          resolve(result)
-        } else {
-          reject(error)
-        }
-      }
-    )
-  )
-};
-
-const searchByBuyingId = (buyingId) => {
-  return new Promise((resolve, reject) =>
-    connection.query(
-      `SELECT * FROM detail_pembelian WHERE ID_pembelian = ${buyingId}`,
-      (error, result) => {
-        if (!error) {
-          resolve(result)
-        } else {
-          reject(error)
-        }
-      }
-    )
-  )
-};
-
-const searchByBuyingIdAsc = () => {
-  return new Promise((resolve, reject) =>
-    connection.query(
-      `SELECT * FROM detail_pembelian ORDER BY ID_pembelian ASC`,
-      (error, result) => {
-        if (!error) {
-          resolve(result)
-        } else {
-          reject(error)
-        }
-      }
-    )
-  )
-};
-
-const searchByBuyingIdDesc = () => {
-  return new Promise((resolve, reject) =>
-    connection.query(
-      `SELECT * FROM detail_pembelian ORDER BY ID_pembelian DESC`,
-      (error, result) => {
-        if (!error) {
-          resolve(result)
-        } else {
-          reject(error)
-        }
-      }
-    )
-  )
-};
-
 
 module.exports = {
   selectAllDetailBuying,
@@ -220,8 +161,4 @@ module.exports = {
   selectAllBuyingById,
   countAllBuying,
   countAllDetailBuying,
-  searchByBuyingDate,
-  searchByBuyingId,
-  searchByBuyingIdAsc,
-  searchByBuyingIdDesc
 };
